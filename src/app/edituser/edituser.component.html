@@ -1,0 +1,33 @@
+<form [formGroup] = "userForm" (ngSubmit) = "updateUser()" *ngIf = "role=='admin'">
+    <label>
+      <p class="label-txt">ENTER USER NAME</p>
+      <input type="text" class="input"  formControlName = "fullName"  [(ngModel)]="userDetail.fullName">
+      <div *ngIf="f.fullName.touched && f.fullName.invalid" class="alert alert-danger">
+        <div *ngIf="f.fullName.errors.required">userName is required.</div>
+    </div>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+        <p class="label-txt">ENTER Email</p>
+        <input type="text" class="input" formControlName = "email" [(ngModel)]="userDetail.email">
+        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+          <div *ngIf="f.email.errors.required">email is required.</div>
+      </div>
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+      </label>
+    <label>
+      <p class="label-txt">ENTER YOUR Role</p>
+      <input type="text" class="input"  formControlName = "role" [(ngModel)]="userDetail.role">
+      <div *ngIf="f.role.touched && f.role.invalid" class="alert alert-danger">
+        <div *ngIf="f.role.errors.required">Please enter Your Role.</div>
+    </div>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <input type="submit" name="" class="btn btn-success" value="submit" [disabled] = "!userForm.valid">
+  </form>

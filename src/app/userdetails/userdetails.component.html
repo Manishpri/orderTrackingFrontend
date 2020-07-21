@@ -1,0 +1,31 @@
+<div class="container-fluid" *ngIf = "role=='admin'">
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-primary mt-5 mb-5 float-right" type="button" [routerLink]="['/registration']">Add User</button>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-8 shadow tablep">
+            <table class="table table-bordered table-striped ">
+                <thead>
+                  <tr>
+                    <th scope="col">FullName</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of allUsers" class="shadow">
+                    <td>{{user.fullName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.role}}</td>
+                     <td>
+                        <button class="btn btn-danger" type="button" [routerLink]="['/edituser']" (click)="edit(user._id)" >Edit</button>
+                     </td>
+                  </tr> 
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+
+          <button class="btn btn-primary mt-5 mb-5 float-right" type="button" *ngIf = "role=='admin'" [routerLink]="['/userlist']">Users List</button>
+
+            <button class="btn btn-primary mt-5 mb-5 float-right" type="button" [routerLink]="['/addOrder']">Add Order</button>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+          </div>
+            <table class="table table-striped table-responsive">
+                <thead>
+                  <tr>
+                    <th scope="col">OrderId</th>
+                    <th scope="col">CustomerId</th>
+                    <th scope="col">EmployeeId</th>
+                    <th scope="col">OrderDate</th>
+                    <th scope="col">RequiredDate</th>
+                    <th scope="col">ShipedDate</th>
+                    <th scope="col">ShipVia</th>
+                    <th scope="col">Frieght</th>
+                    <th scope="col">ShipName</th>
+                    <th scope="col">ShipAddress</th>
+                    <th scope="col">ShipCity</th>
+                    <th scope="col">ShipRegion</th>
+                    <th scope="col">ShipPostalCode</th>
+                    <th scope="col">ShipCountry</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let order of allOrders | filter:term |  paginate: { itemsPerPage: limit, currentPage: page,totalItems: total}">
+                    <td>{{order.orderId}}</td>
+                    <td>{{order.customerId}}</td>
+                    <td>{{order.employeeId}}</td>
+                    <td>{{order.orderDate}}</td>
+                    <td>{{order.requiredDate}}</td>
+                    <td>{{order.shipedDate}}</td>
+                    <td>{{order.shipVia}}</td>
+                    <td>{{order.frieght}}</td>
+                    <td>{{order.shipName}}</td>
+                    <td>{{order.shipAddress}}</td>
+                    <td>{{order.shipCity}}</td>
+                    <td>{{order.shipRegion}}</td>
+                    <td>{{order.shipPostalCode}}</td>
+                    <td>{{order.shipCountry}}</td>
+                    
+                     <td>
+                        <button class="btn btn-danger" type="button" (click)="cancel(order._id)" >Cancel</button>
+                     </td>
+                  </tr> 
+                </tbody>
+              </table>
+        </div>
+        <div class="pagination pagination-sm m-0 float-right">
+          <pagination-controls (pageChange)="getOrders($event)">
+
+          </pagination-controls>
+        </div>
+    </div>
+</div>

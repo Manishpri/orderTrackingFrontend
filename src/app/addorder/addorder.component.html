@@ -1,0 +1,147 @@
+
+<div class="container mt-5">
+    <div class="row justify-content-center  ">
+        <div class="col-8">
+            <form [formGroup] = "orderForm" class="shadow" (ngSubmit)="order()">
+                <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" formControlName="orderId" placeholder="OrderId">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" formControlName="customerId" placeholder="customerId">
+                </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="employeeId" placeholder="employeeId">
+                    </div>
+                    <div class="col">
+                    <input type="date" class="form-control" formControlName="orderDate" placeholder="orderDate">
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col">
+                    <input type="date" class="form-control" formControlName="requiredDate" placeholder="requiredDate">
+                    </div>
+                    <div class="col">
+                    <input type="date" class="form-control" formControlName="shippedDate" placeholder="shipedDate">
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="shipVia" placeholder="shipvia">
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="frieght" placeholder="frieght">
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="shipName" placeholder="shipName">
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="shipAddress" placeholder="shipAddress">
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="shipCity" placeholder="shipCity">
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="ShipRegion" placeholder="ShipRegion">
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="shipPostalCode" placeholder="shipPostalCode">
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" formControlName="shipCountry" placeholder="shipCountry">
+                    </div>
+                </div> <br>
+                <div class="row justify-content-center">
+                    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="!orderForm.valid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <form [formGroup]="orderForm" (ngSubmit)="order()">
+    <div class="form-group">
+        <label>
+            Order Id:
+            <input class="form-control" type="text" formControlName="orderId">
+          </label> 
+    </div>
+  <label>
+    Order Id:
+    <input type="text" formControlName="orderId">
+  </label> 
+<label>
+    Customer Id:
+    <input type="text" formControlName="customerId">
+  </label> <br>
+
+<label>
+    Employee Id:
+    <input type="text" formControlName="employeeId">
+    </label> 
+   
+
+    <label>
+      Order Date:
+      <input type="date" formControlName="orderDate">
+    </label> <br>
+
+    <label>
+      Required Date:
+      <input type="date" formControlName="requiredDate">
+    </label>
+
+    <label>
+    Shiped Date:
+    <input type="date" formControlName="shipedDate">
+    </label><br>
+
+    <label>
+    ShipVia:
+    <input type="number" formControlName="shipvia">
+    </label>
+    <label>
+    Frieght:
+    <input type="text" formControlName="frieght">
+    </label><br>
+    <label>
+    Ship Name:
+    <input type="text" formControlName="shipName">
+    </label>
+    <label>
+    Ship Address:
+    <input type="text" formControlName="shipAddress">
+    </label><br>
+    <label>
+    Ship City:
+    <input type="text" formControlName="shipCity">
+    </label>
+    <label>
+    Ship Region:
+    <input type="text" formControlName="ShipRegion">
+    </label><br>
+    <label>
+    Ship Postal Code:
+    <input type="number" formControlName="shipPostalCode">
+    </label>
+<label>
+    Ship Country:
+    <input type="text" formControlName="shipCountry">
+</label> <br>
+
+
+
+<button type="submit" [disabled]="!orderForm.valid">Submit</button>
+  
+</form> -->
